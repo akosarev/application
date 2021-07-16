@@ -50,4 +50,4 @@ jobs:
         id: apply
         run: |
           terraform init
-          terraform apply -var="commit=${GITHUB_SHA}"
+          terraform apply -var="commit=${GITHUB_SHA}" --auto-approve
