@@ -48,4 +48,6 @@ jobs:
           cd ..
       - name: Terraform Apply
         id: apply
-        run: terraform apply -var="commit=${GITHUB_SHA}"
+        run: |
+          terraform init
+          terraform apply -var="commit=${GITHUB_SHA}"
