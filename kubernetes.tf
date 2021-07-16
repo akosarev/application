@@ -1,3 +1,8 @@
+variable "commit" {
+  type = string
+  description = "The Current commit."
+}
+
 resource "kubernetes_deployment" "infra-web" {
   metadata {
     name = "infra-web"
@@ -23,8 +28,8 @@ resource "kubernetes_deployment" "infra-web" {
       }
       spec {
         container {
-          name  = "infra-web"
-          image = "nginx"
+          name  = "infra-web-${var.commit}"
+          image = "363724809304.dkr.ecr.eu-west-1.amazonaws.com/application:latest"
           resources {
             requests = {
               cpu = "200m"
