@@ -1,4 +1,4 @@
-name: "Main: Deploy infrastructure"
+name: "Main: Deploy application"
 
 # Controls when the workflow will run
 on:
